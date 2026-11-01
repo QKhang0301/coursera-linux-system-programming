@@ -10,8 +10,8 @@ all : $(TARGET)
 test_execl : test_execl.o
 	$(CC) $(CFLAGS) $< -o $@
 
-%.c : %.o
-	$(CC) $(CFLAGS) $< -c $@
+%.o : %.c
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	rm -rf $(TARGET) $(OBJ)
